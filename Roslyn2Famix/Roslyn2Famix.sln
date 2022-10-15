@@ -18,8 +18,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamixTest", "..\FamixTest\F
 		{AE24CAAD-8F48-4B71-9776-0FAFBEAAB808} = {AE24CAAD-8F48-4B71-9776-0FAFBEAAB808}
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Roslyn2Famix", "..\Roslyn2FamixSetup\Roslyn2FamixSetup.vdproj", "{27021A0F-07D3-4D09-A0A1-A3185FFA8192}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,10 +40,6 @@ Global
 		{673AC032-D1B8-4942-86F8-25747BCCCDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{673AC032-D1B8-4942-86F8-25747BCCCDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{673AC032-D1B8-4942-86F8-25747BCCCDB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27021A0F-07D3-4D09-A0A1-A3185FFA8192}.Debug|Any CPU.ActiveCfg = Debug
-		{27021A0F-07D3-4D09-A0A1-A3185FFA8192}.Debug|Any CPU.Build.0 = Debug
-		{27021A0F-07D3-4D09-A0A1-A3185FFA8192}.Release|Any CPU.ActiveCfg = Release
-		{27021A0F-07D3-4D09-A0A1-A3185FFA8192}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

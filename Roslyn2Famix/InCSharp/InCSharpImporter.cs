@@ -153,14 +153,37 @@ namespace Roslyn2Famix.InCSharp
             return fullyQualifiedName;
         }
 
+        private String GetNamespaceFullName(INamespaceSymbol ns)
+        {
+            if (ns.ContainingNamespace is null)
+            {
+                return ns.Name;
+            }
+            else
+            {
+                var nsFullName = GetNamespaceFullName(ns.ContainingNamespace);
+                if (nsFullName != "")
+                {
+                    return GetNamespaceFullName(ns.ContainingNamespace) + "." + ns.Name;
+                }
+                else
+                {
+                    return ns.Name;
+                }
+            }
+
+        }
+
         private FAMIX.Namespace EnsureNamespace(INamespaceSymbol ns)
         {
-            if (Namespaces.has(ns.Name))
-                return Namespaces.Named(ns.Name);
+            var nsFullName = GetNamespaceFullName(ns);
+
+            if (Namespaces.has(nsFullName))
+                return Namespaces.Named(nsFullName);
             FAMIX.Namespace newNs = repository.New<FAMIX.Namespace>(typeof(FAMIX.Namespace).FullName);
             newNs.name = ns.Name;
             newNs.isStub = true;
-            Namespaces.Add(ns.Name, newNs);
+            Namespaces.Add(nsFullName, newNs);
             var containingNamespace = ns.ContainingNamespace;
             if (containingNamespace != null && !containingNamespace.IsGlobalNamespace)
                 newNs.parentScope = EnsureNamespace(containingNamespace);

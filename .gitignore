@@ -38,8 +38,11 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+
+# VSCode
 /.vs
 SampleCode/.vs
+Roslyn2Famix/.vs/
 
 /Roslyn2FamixSetup/Release
 /Roslyn2FamixSetup/Debug
